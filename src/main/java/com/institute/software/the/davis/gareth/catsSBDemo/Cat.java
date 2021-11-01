@@ -1,6 +1,16 @@
 package com.institute.software.the.davis.gareth.catsSBDemo;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+
+@Entity
 public class Cat {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.TABLE)
+    private int id;
 
     private String name;
     private int age;
@@ -10,6 +20,10 @@ public class Cat {
         this.name = name;
         this.age = age;
         this.breed = breed;
+    }
+
+    public Cat(){
+
     }
 
     public String getName() {
@@ -24,6 +38,14 @@ public class Cat {
         return age;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -36,10 +58,10 @@ public class Cat {
         this.breed = breed;
     }
 
-    public String getJsonObjectOfCat(){
+   /* public String getJsonObjectOfCat(){
         return "{"+
                 "\"name\" : \" " + name + "\"," +
                 "\" age\" : \" " + age + "\"" +
                 "}";
-    }
+    }  */
 }
